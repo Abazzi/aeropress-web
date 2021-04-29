@@ -1,3 +1,15 @@
 body {
-    background-color: aquamarine;
+    background-color: #282a36;
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(fonts/RobotoMono-Regular.ttf);
+}
+
+header{
+    color: #ffb86c;
+    font-family: roboto;
+    font-size: x-large;
+    text-align: center;
 }
