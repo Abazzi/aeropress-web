@@ -1,0 +1,43 @@
+body {
+    background-color: #282a36;
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(fonts/RobotoMono-Regular.ttf);
+}
+
+header{
+    color: #50fa7b;
+    font-family: roboto;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#subtitle{
+    text-align: center;
+    font-size: x-large;
+    color: #ffb86c;
+    font-family: roboto;
+}
+
+#content{
+    margin: auto;
+    text-align: center;
+}
+
+#generateRecipe{
+    padding: 20px;
+    font-size: large;
+    font-family: roboto;
+    background-color: #6272a4;
+    color: #ff79c6;
+    border: 0;
+    border-radius: 0px;
+    box-shadow: 1px 2px #bd94f9;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#generateRecipe:hover{
+    box-shadow: 3px 10px #ff79c6;
+}
