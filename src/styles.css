@@ -41,3 +41,12 @@ header{
 #generateRecipe:hover{
     box-shadow: 3px 10px #ff79c6;
 }
+
+footer{
+    text-align: center;
+    font-family: roboto;
+    background-color: #50fa7b;
+    color: #6272a4;
+    padding: 10px 10px 0px 0px;
+    font-size: x-large;
+}
