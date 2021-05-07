@@ -10,21 +10,33 @@
 <body>
 
     <!-- Top Banner with link to original idea-->
-    <div class="topNav">
-
-    </div>
 
     <header>
         Aeropress Recipe Generator
     </header>
     <p id="subtitle">7,776 (hopefully) good recipes</p>
 
-    <!--Generate Recipe Button-->
-    <div id="content">
-        <button id="generateRecipe">
-            Generate Recipe
-        </button>
-    </div>
-    
+    <section id="content">
+
+        <div id="recipeDiv">
+            <ol id="recipe">
+                <li>Click the button below to generate a recipe!</li>
+            </ol>
+        </div>
+         
+        <!--Generate Recipe Button-->
+        <div id="buttonDiv">
+            <button id="generateRecipe" onclick="buttonClick()">
+                Generate Recipe
+            </button>
+        </div>
+
+    </section>
+
 </body>
+<footer>
+    Original idea by <a href="https://jimseven.com/2017/12/06/coffee-brewing-dice/">James Hoffmann</a> &bull; Made With &#x1F493; + &#9749; by <a href="https://www.adambazzi.co">Adam Bazzi</a> 
+</footer>
+
+<script src="js/main.js"></script>
 </html>

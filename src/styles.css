@@ -1,16 +1,39 @@
-body {
-    background-color: #282a36;
-}
-
 @font-face {
     font-family: roboto;
     src: url(fonts/RobotoMono-Regular.ttf);
+}
+
+body {
+    background-color: #282a36;
 }
 
 header{
     color: #50fa7b;
     font-family: roboto;
     font-size: xx-large;
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    font-family: roboto;
+    color: #50fa7b;
+    padding-top: 1em;
+    font-size: x-large;
+    width: 100%;
+}
+
+a{
+    color: #bd94f9;
+    text-decoration: none; 
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+li{
+    list-style-type: none;
     text-align: center;
 }
 
@@ -40,4 +63,38 @@ header{
 
 #generateRecipe:hover{
     box-shadow: 3px 10px #ff79c6;
+}
+
+#buttonDiv{
+    padding-top: 3em;
+}
+
+ol {
+    text-align: center;
+    margin: auto;
+    padding-right: 40px;
+}
+
+#recipeDiv{
+    margin: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #bd94f9;
+    box-shadow: 3px 10px #ff79c6;
+    font-size: x-large;
+    color: #282a36;
+    font-family: roboto;
+    max-width: 550px;
+}
+
+@media (max-width: 600px){
+    footer{
+        font-size: medium;
+        padding-top: 0.375em;
+        padding-bottom: 0.375em;
+    }
+
+    li{
+        font-size:large;
+    }
 }
