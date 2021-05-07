@@ -72,6 +72,7 @@ li{
 ol {
     text-align: center;
     margin: auto;
+    padding-right: 40px;
 }
 
 #recipeDiv{
