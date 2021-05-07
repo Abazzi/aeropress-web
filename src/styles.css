@@ -1,10 +1,10 @@
-body {
-    background-color: #282a36;
-}
-
 @font-face {
     font-family: roboto;
     src: url(fonts/RobotoMono-Regular.ttf);
+}
+
+body {
+    background-color: #282a36;
 }
 
 header{
@@ -17,25 +17,24 @@ header{
 footer{
     text-align: center;
     font-family: roboto;
-    /* background-color: #50fa7b; */
     color: #50fa7b;
-    padding: 1em;
+    padding-top: 1em;
     font-size: x-large;
     width: 100%;
 }
+
 a{
     color: #bd94f9;
     text-decoration: none; 
 }
+
 a:hover{
     text-decoration: underline;
 }
 
-@media (max-width: 600px){
-    footer{
-        font-size: medium;
-        padding: 0.375em;
-    }
+li{
+    list-style-type: none;
+    text-align: center;
 }
 
 #subtitle{
@@ -70,14 +69,31 @@ a:hover{
     padding-top: 3em;
 }
 
+ol {
+    text-align: center;
+    margin: auto;
+}
+
 #recipeDiv{
     margin: auto;
-    padding: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     background-color: #bd94f9;
     box-shadow: 3px 10px #ff79c6;
-    text-align: center;
     font-size: x-large;
     color: #282a36;
     font-family: roboto;
-    max-width: 500px;
+    max-width: 550px;
+}
+
+@media (max-width: 600px){
+    footer{
+        font-size: medium;
+        padding-top: 0.375em;
+        padding-bottom: 0.375em;
+    }
+
+    li{
+        font-size:large;
+    }
 }
