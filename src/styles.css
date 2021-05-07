@@ -17,14 +17,25 @@ header{
 footer{
     text-align: center;
     font-family: roboto;
-    background-color: #50fa7b;
-    color: #6272a4;
-    padding: 0.5em;
-    bottom: 0;
-    height: 40px;
+    /* background-color: #50fa7b; */
+    color: #50fa7b;
+    padding: 1em;
     font-size: x-large;
-    position: fixed;
     width: 100%;
+}
+a{
+    color: #bd94f9;
+    text-decoration: none; 
+}
+a:hover{
+    text-decoration: underline;
+}
+
+@media (max-width: 600px){
+    footer{
+        font-size: medium;
+        padding: 0.375em;
+    }
 }
 
 #subtitle{
@@ -55,19 +66,18 @@ footer{
     box-shadow: 3px 10px #ff79c6;
 }
 
+#buttonDiv{
+    padding-top: 3em;
+}
 
 #recipeDiv{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -200px;
-    margin-left: -125px;
+    margin: auto;
     padding: 1em;
     background-color: #bd94f9;
     box-shadow: 3px 10px #ff79c6;
-    transition: box-shadow 0.3s ease-in-out;
     text-align: center;
     font-size: x-large;
     color: #282a36;
     font-family: roboto;
+    max-width: 500px;
 }

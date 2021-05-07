@@ -35,11 +35,14 @@ function displayRecipe() {
     var diceRoll = Math.floor(Math.random() * 6)
     var steps = ["Temperature","Steep Time / Grind","Water / Coffee","Stirring","Position / Bloom"]
 
+    const stepHexCode = "#fec33a";
+
+
     let recipe = generateRecipe(diceRoll)
 
     for(i = 0; i < recipe.length; i++){
-        var recipeStepText = steps[i] + " : " + recipe[i]
-        var ol = document.querySelector("#recipe")
+        var recipeStepText = steps[i]+ " : " + recipe[i]
+        var ol = document.querySelector("#recipe");
         var li = document.createElement("LI");
         li.setAttribute("class","recipeStep");
         var recipeStep = document.createTextNode(recipeStepText);
