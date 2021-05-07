@@ -1,4 +1,11 @@
 
+/**
+ * generateRecipe(random dice roll)
+ * giving the function a parameter makes it so a new roll will be chosen each time the button is clicked
+ * declare 5 arrays with all possible steps as Strings.
+ * assign a randomly picked step to a variable for each part of the process
+ * make a new array with all the selected steps and return it.
+ */
 function generateRecipe(diceRoll){
     var temperatureOptions = ["75 C","80 C","85 C","90 C","95 C","Your Choice"];
     var steepTimeGrindOptions = ["Coarse: 4 Minutes","Medium: 120 Seconds","Medium Fine: 90s","Fine:60s","Very Fine: 60s","Your Choice"];
@@ -18,10 +25,12 @@ function generateRecipe(diceRoll){
 }
 
 function clearRecipe(){
-    let recipeDiv = document.getElementById('recipe');
-    recipeDiv.innerHTML = "";
+    document.getElementById("recipe").innerHTML = "";
 }
 
+/**
+ * displayRecipe()
+ */
 function displayRecipe() {
     var diceRoll = Math.floor(Math.random() * 6)
     var steps = ["Temperature","Steep Time / Grind","Water / Coffee","Stirring","Position / Bloom"]
@@ -29,17 +38,20 @@ function displayRecipe() {
     let recipe = generateRecipe(diceRoll)
 
     for(i = 0; i < recipe.length; i++){
-        var recipeStepText = steps[i] + ":" + recipe[i]
+        var recipeStepText = steps[i] + " : " + recipe[i]
+        var ol = document.querySelector("#recipe")
         var li = document.createElement("LI");
-        li.setAttribute("class","recipeStep")
+        li.setAttribute("class","recipeStep");
         var recipeStep = document.createTextNode(recipeStepText);
         li.appendChild(recipeStep);
         recipeDiv.appendChild(li);
+        ol.appendChild(li)
     }
 
     
 }
 
+// Basic function for the button that calls both clearRecipe() and displayRecipe()
 function buttonClick(){
     clearRecipe();
     displayRecipe();
