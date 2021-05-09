@@ -51,7 +51,7 @@ function displayRecipe() {
     let recipe = generateRecipe();
 
     for(i = 0; i < recipe.length; i++){
-        var recipeStepText = steps[i] + " : " + recipe[i]
+        var recipeStepText = steps[i] + ": " + recipe[i]
         var ol = document.querySelector("#recipe");
         var li = document.createElement("LI");
         var br = document.createElement("br");
