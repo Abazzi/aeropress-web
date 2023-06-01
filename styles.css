@@ -1,3 +1,23 @@
+root{
+    --background-dark: #55423d;
+    --headline-dark: #fffffe;
+    --paragraph-dark: #fff3ec;
+    --button-dark: #ffc0ad;
+    --button-text-dark: #271c19;
+    --card-background-dark: #ffc0ad;
+    --card-paragraph-dark:#fff3ec;
+    --card-headline-dark: #271c19;
+    --background-light: #ffc0ad;
+    --headline-light: #271c19;
+    --paragraph-light: #271c19;
+    --button-light: #55423d;
+    --button-text-light: #fff3ec;
+    --card-background-light: #fffffe;
+    --card-paragraph-light:#271c19;
+    --card-headline-light: #271c19;
+    --card-highlight: #9656a1;
+}
+
 @font-face {
     font-family: roboto;
     src: url(fonts/RobotoMono-Regular.ttf);
