@@ -20,14 +20,11 @@
 }
 
 /* External Font */
-@font-face {
-    font-family: roboto;
-    src: url(fonts/RobotoMono-Regular.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
 /* Direct Element Properties  */
 header{
-    font-family: roboto;
+    font-family: 'Oxygen' ;
     font-size: xx-large;
     text-align: center;
     display: flex;
@@ -140,7 +137,7 @@ input:checked + .slider:before {
 /*Non-Colour Specific Classes */
 .footer{
     text-align: center;
-    font-family: roboto;
+    font-family: Oxygen;
     padding-top: 1em;
     font-size: x-large;
     width: 100%;
@@ -154,7 +151,7 @@ input:checked + .slider:before {
 .subtitle{
     text-align: center;
     font-size: x-large;
-    font-family: roboto;
+    font-family: Oxygen;
 }
 
 .recipeDiv{
@@ -162,7 +159,7 @@ input:checked + .slider:before {
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: x-large;
-    font-family: roboto;
+    font-family: Oxygen;
     max-width: 550px;
 }
 
