@@ -5,24 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-    </style>
     <title>Aeropress Recipe Generator</title>
     <script src="main.js" defer></script>
 </head>
-<body class="body-dark">
+<body class="body">
     <!-- Top Banner with link to original idea-->
 
-    <header class="header-dark">
+    <header class="header">
         Aeropress Recipe Generator
     </header>
-    <p class="subtitle subtitle-dark">7,776 (hopefully) good recipes</p>
+    <p class="subtitle">7,776 (hopefully) good recipes</p>
 
 
     <section class="content">
-
-        <div class="recipeDiv recipeDiv-dark">
+        <div class="recipeDiv">
             <ol id="recipe">
                 <li>Click me to generate a recipe!</li>
             </ol>
@@ -31,10 +27,10 @@
     </section>
 
 </body>
-<footer class="footer footer-dark">
+<footer class="footer">
     Original idea by <a href="https://jimseven.com/2017/12/06/coffee-brewing-dice/">James Hoffmann</a> &bull; Theme Toggle :
     <label class="switch">
-        <input type="checkbox" checked>
+        <input type="checkbox" id="toggleTheme">
         <span class="slider round"></span>
     </label>
 </footer>

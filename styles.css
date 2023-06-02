@@ -1,21 +1,13 @@
 /* Declared Colour Variables*/
 :root{
-    --background-dark: #55423d;
+    --background-dark: #271c19;
     --headline-dark: #fffffe;
+    --sub-headline-dark:#fff3ec;
     --paragraph-dark: #fff3ec;
-    --button-dark: #ffc0ad;
     --button-text-dark: #271c19;
-    --card-background-dark: #ffc0ad;
-    --card-paragraph-dark:#271c19;
-    --card-headline-dark: #271c19;
-    --background-light: #ffc0ad;
-    --headline-light: #271c19;
-    --paragraph-light: #271c19;
-    --button-light: #55423d;
-    --button-text-light: #fff3ec;
-    --card-background-light: #fffffe;
-    --card-paragraph-light:#271c19;
-    --card-headline-light: #271c19;
+    --card-background-dark:#55423d;
+    --card-paragraph-dark:#fff3ec;
+    --card-headline-dark: #fffffe;
     --card-highlight: #9656a1;
 }
 
@@ -23,24 +15,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
 /* Direct Element Properties  */
+body{
+  background-color: #55423d;
+}
 header{
     font-family: 'Oxygen' ;
     font-size: xx-large;
     text-align: center;
     display: flex;
     justify-content: space-around;
+    color: #fffffe;
 }
 
 ol {
     text-align: center;
     margin: auto;
     padding-right: 40px;
-    color: var(--card-paragraph-dark);
+    color: #fff3ec;
 }
 
 a{
-    color: var(--button-dark);
+    color: #fff3ec;
     text-decoration: none; 
+}
+
+p{
+  color: #fff3ec;
 }
 
 a:hover{
@@ -50,6 +50,11 @@ a:hover{
 li{
     list-style-type: none;
     text-align: center;
+    color: #271c19;
+}
+
+footer{
+    color: #fff3ec;
 }
  /* The switch - the box around the slider */
 .switch {
@@ -143,7 +148,7 @@ input:checked + .slider:before {
     width: 100%;
 }
 
-#content{
+.content{
     margin: auto;
     text-align: center;
 }
@@ -159,8 +164,10 @@ input:checked + .slider:before {
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: x-large;
+    box-shadow: 3px 10px #9656a1;
     font-family: Oxygen;
     max-width: 550px;
+    background-color:#ffc0ad;
 }
 
 /*Dark Mode Classes*/
@@ -188,32 +195,6 @@ input:checked + .slider:before {
 
 .footer-dark{
     color: var(--paragraph-dark);
-}
-/*Light Mode Classes*/
-.subtitle-light{
-    color: var(--paragraph-dark);
-}
-
-.recipeDiv-light{
-    background-color: var(--card-background-light);
-    box-shadow: 3px 10px var(--card-highlight);
-    color: var(--card-paragraph-light);
-}
-
-.body-light{
-    background-color: var(--background-light);
-}
-
-.header-light{
-    color: var(--headline-light);
-}
-
-.ol-light{
-    color: var(--card-paragraph-light);
-}
-
-.footer-light{
-    color: var(--paragraph-light);
 }
 
 /* Media Queries*/
