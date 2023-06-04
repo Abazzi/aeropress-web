@@ -17,30 +17,35 @@
 /* Direct Element Properties  */
 body{
   background-color: #55423d;
+  font-family: 'Oxygen', sans-serif;
 }
 header{
-    font-family: 'Oxygen' ;
-    font-size: xx-large;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    color: #fffffe;
+  font-size: xx-large;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: #fffffe;
+  font-family: 'Oxygen', sans-serif;
+  margin: 1rem;
 }
 
 ol {
-    text-align: center;
-    margin: auto;
-    padding-right: 40px;
-    color: #fff3ec;
+  text-align: center;
+  margin: auto;
+  padding-right: 40px;
+  color: #271c19;
+  font-family: 'Oxygen', sans-serif;
 }
 
 a{
-    color: #fff3ec;
-    text-decoration: none; 
+  color: #fff3ec;
+  text-decoration: none; 
+  font-family: 'Oxygen', sans-serif;
 }
 
 p{
   color: #fff3ec;
+  font-family: 'Oxygen', sans-serif;
 }
 
 a:hover{
@@ -48,14 +53,17 @@ a:hover{
 }
 
 li{
-    list-style-type: none;
-    text-align: center;
-    color: #271c19;
+  list-style-type: none;
+  text-align: center;
+  color: #271c19;
+  font-family: 'Oxygen', sans-serif;
 }
 
 footer{
-    color: #fff3ec;
+  color: #fff3ec;
+  font-family: 'Oxygen', sans-serif;
 }
+
  /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -142,15 +150,10 @@ input:checked + .slider:before {
 /*Non-Colour Specific Classes */
 .footer{
     text-align: center;
-    font-family: Oxygen;
+    font-family: 'Oxygen', sans-serif;
     padding-top: 1em;
     font-size: x-large;
     width: 100%;
-}
-
-.content{
-    margin: auto;
-    text-align: center;
 }
 
 .subtitle{
@@ -170,8 +173,16 @@ input:checked + .slider:before {
     background-color:#ffc0ad;
 }
 
+.infoIcon{
+  margin-left: 1rem;
+}
+
 /*Dark Mode Classes*/
 .subtitle-dark{
+    color: var(--paragraph-dark);
+}
+
+.step-dark{
     color: var(--paragraph-dark);
 }
 

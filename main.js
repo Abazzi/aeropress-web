@@ -1,17 +1,26 @@
+const recipeDiv = document.querySelector('.recipeDiv');
+const classes = ['body','header','recipeDiv','footer'];
+const toggle = document.querySelector("#toggleTheme");
+const temperatureOptions = ["75 C","80 C","85 C","90 C","95 C","Your Choice"];
+const steepTimeGrindOptions = ["Coarse - 4 Minutes","Medium - 120 Seconds","Medium Fine - 90s","Fine - 60s","Very Fine - 60s","Your Choice"];
+const waterToCoffeeOptions = ["12g of Coffee to 200g of Water","15g of Coffee to 200g of Water","15g of Coffee to 250g of Water","24g of Coffee to 200g of Water (Dilute to Share)","30g of Coffee to 200g of Water (Dilute to Share)","Your Choice"];
+const stirringOptions = ["Stir Once Before Pressing","Stir Twice Before Pressing","Stir Once Clockwise, and Once Counter-Clockwise Before Pressing","Stir North, South, East, West Before Pressing","Don't Stir","Your Choice"];
+const positionBloomOptions = ["Upright, 30s Bloom, 30g of Water","Upright, no Bloom","Inverted, 30s Bloom, 30g of Water","Inverted, no Bloom","Upright, 30s Bloom, 60g of Water","Inverted, 30s Bloom, 60g of Water"];
+let die;
+let stepNodes;
+
 /**
  * function diceRolls 
  */
-let die;
-
-function diceRolls() {
-    let diceRollsArray = [];
+function dice() {
+    let rolls = [];
 
     for(i = 0; i <= 5; i++){
         die = Math.floor(Math.random() * 6);
-        diceRollsArray.push(die);
+        rolls.push(die);
     }
 
-    return diceRollsArray;
+    return rolls;
 }
 
 /**
@@ -22,65 +31,79 @@ function diceRolls() {
  * make a new array with all the selected steps and return it.
  */
 function generateRecipe(){
+    let rolls = dice();
 
-    var diceRollsArray = diceRolls();
+    let steps = ["Temperature","Steep Time / Grind","Water / Coffee","Stirring","Position / Bloom"]
 
-    var temperatureOptions = ["75 C","80 C","85 C","90 C","95 C","Your Choice"];
-    var steepTimeGrindOptions = ["Coarse - 4 Minutes","Medium - 120 Seconds","Medium Fine - 90s","Fine - 60s","Very Fine - 60s","Your Choice"];
-    var waterToCoffeeOptions = ["12g of Coffee to 200g of Water","15g of Coffee to 200g of Water","15g of Coffee to 250g of Water","24g of Coffee to 200g of Water (Dilute to Share)","30g of Coffee to 200g of Water (Dilute to Share)","Your Choice"];
-    var stirringOptions = ["Stir Once Before Pressing","Stir Twice Before Pressing","Stir Once Clockwise, and Once Counter-Clockwise Before Pressing","Stir North, South, East, West Before Pressing","Don't Stir","Your Choice"];
-    var positionBloomOptions = ["Upright, 30s Bloom, 30g of Water","Upright, no Bloom","Inverted, 30s Bloom, 30g of Water","Inverted, no Bloom","Upright, 30s Bloom, 60g of Water","Inverted, 30s Bloom, 60g of Water"];
-
-    var recipe = [temperatureOptions[diceRollsArray[0]],steepTimeGrindOptions[diceRollsArray[1]],waterToCoffeeOptions[diceRollsArray[2]],
-    stirringOptions[diceRollsArray[3]],positionBloomOptions[diceRollsArray[4]]];
+    let recipe = {
+        temperature: `${steps[0]}: ${temperatureOptions[rolls[0]]}`,
+        steepTimeGrind: `${steps[1]}: ${steepTimeGrindOptions[rolls[1]]}`,
+        waterToCoffee: `${steps[2]}: ${waterToCoffeeOptions[rolls[2]]}`,
+        stirring: `${steps[3]}: ${stirringOptions[rolls[3]]}`,
+        positionBloom:`${steps[4]}: ${positionBloomOptions[rolls[4]]}`
+    }   
     
     return recipe;
-}
-
-function clearRecipe(){
-    document.getElementById("recipe").innerHTML = "";
 }
 
 /**
  * displayRecipe()
  */
 function displayRecipe() {
-    var steps = ["Temperature","Steep Time / Grind","Water / Coffee","Stirring","Position / Bloom"]
-
-    const stepHexCode = "#fec33a";
 
     let recipe = generateRecipe();
 
-    for(i = 0; i < recipe.length; i++){
-        var recipeStepText = steps[i] + ": " + recipe[i]
-        var ol = document.querySelector("#recipe");
-        var li = document.createElement("LI");
-        var br = document.createElement("br");
-        li.setAttribute("class","recipeStep");
-        var recipeStep = document.createTextNode(recipeStepText);
+    for(const step in recipe){
+        let ol = document.querySelector('#recipe');
+        let li = document.createElement('li');
+        let br = document.createElement('br');
+        let recipeStep;
+        let recipeStepText;
+        recipeStepText = `${recipe[step]}`;
+
+        // assigns class depending if the toggle switch is on or off
+        toggle.checked ? li.setAttribute('class','step-dark') : li.setAttribute('class','step');
+        recipeStep = document.createTextNode(recipeStepText);
         li.appendChild(recipeStep);
-        recipeDiv.appendChild(li);
         ol.appendChild(li);
-        ol.appendChild(br);
+        ol.append(br);
     }
 
-    
+    stepNodes = document.querySelectorAll('.step');
 }
+
+// Clears all child nodes in div, used for recipeDiv
+function clearRecipe(parent){
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 
 function toggleTheme(){
-    let classes = ["body","header","subtitle","recipeDiv","footer"]
-    let toggle = document.querySelector('#toggleTheme');
-    if(toggle.checked){
-        for(i = 0; i < classes.length; i++){
-            document.querySelector(`.${classes[i]}`).classList.toggle(`${classes[i]}-dark`);
+    stepNodes = document.querySelectorAll('.step');
+    for(i = 0; i < classes.length; i++){
+        if(document.querySelector(`${classes[i]}`).classList.contains(`${classes[i]}-dark`)){
+            document.querySelector(`.${classes[i]}`).classList.remove(`${classes[i]}-dark`);
+            stepNodes.forEach((step) => step.classList.remove('step-dark'));
+        }else{
+            document.querySelector(`.${classes[i]}`).classList.add(`${classes[i]}-dark`);
+            stepNodes.forEach((step) => step.classList.add('step-dark'));
         }
-    }else{
-        console.log("Bye");
     }
 }
+
+// Event Listener attached to recipeDiv
+recipeDiv.addEventListener('click', (e) => {
+    buttonClick();
+});
+
+toggle.addEventListener('change' , () => {
+    toggleTheme();
+})
 
 // Basic function for the button that calls both clearRecipe() and displayRecipe()
 function buttonClick(){
-    clearRecipe();
+    clearRecipe(recipe);
     displayRecipe();
 }
