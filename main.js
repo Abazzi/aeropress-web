@@ -1,6 +1,10 @@
+// HTML Connections
 const recipeDiv = document.querySelector('.recipeDiv');
 const classes = ['body','header','recipeDiv','footer'];
 const toggle = document.querySelector("#toggleTheme");
+const infoIcon = document.querySelector('.infoIcon');
+const infoDialog = document.querySelector('.infoDialog');
+// Dice Sides
 const temperatureOptions = ["75 C","80 C","85 C","90 C","95 C","Your Choice"];
 const steepTimeGrindOptions = ["Coarse - 4 Minutes","Medium - 120 Seconds","Medium Fine - 90s","Fine - 60s","Very Fine - 60s","Your Choice"];
 const waterToCoffeeOptions = ["12g of Coffee to 200g of Water","15g of Coffee to 200g of Water","15g of Coffee to 250g of Water","24g of Coffee to 200g of Water (Dilute to Share)","30g of Coffee to 200g of Water (Dilute to Share)","Your Choice"];
@@ -100,6 +104,10 @@ recipeDiv.addEventListener('click', (e) => {
 
 toggle.addEventListener('change' , () => {
     toggleTheme();
+})
+
+infoIcon.addEventListener('click', () =>{
+    infoDialog.showModal();
 })
 
 // Basic function for the button that calls both clearRecipe() and displayRecipe()
