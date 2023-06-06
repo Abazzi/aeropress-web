@@ -119,14 +119,18 @@ closeButton.addEventListener('click', () => {
 clipboardIcon.addEventListener('click', () => {
     let steps = document.querySelectorAll('.step');
     let allSteps = [];
+    let stepTextArea = document.createElement('textarea')
 
     steps.forEach((step) => {
         // Copy the text inside the text field
         allSteps.push(step.textContent);
     })
 
-    navigator.clipboard.writeText(allSteps);
+    stepTextArea.value = allSteps.join('\n');
 
+    navigator.clipboard.writeText(stepTextArea.value);
+
+    stepTextArea.remove();
 })
 
 // Basic function for the button that calls both clearRecipe() and displayRecipe()

@@ -186,12 +186,6 @@ input:checked + .slider:before {
     width: 100%;
 }
 
-.subtitle{
-    text-align: center;
-    font-size: x-large;
-    font-family: Oxygen;
-}
-
 .recipeDiv{
     margin: auto;
     padding-top: 1em;
@@ -214,7 +208,6 @@ input:checked + .slider:before {
 
 .recipeDiv-dark{
     background-color: var(--card-background-dark);
-    box-shadow: 3px 10px var(--card-highlight);
     color: var(--card-paragraph-dark);
 }
 
