@@ -24,6 +24,7 @@ header{
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   color: #fffffe;
   font-family: 'Oxygen', sans-serif;
   margin: 1rem;
@@ -59,17 +60,36 @@ li{
   font-family: 'Oxygen', sans-serif;
 }
 
+span{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem ;
+}
+
 footer{
   color: #fff3ec;
   font-family: 'Oxygen', sans-serif;
 }
 
-.closeButton{
-  color: red;
-  font-size: 1rem;
+/*Dialog Properties*/
+
+.infoDialog{
+  text-align: center;
+  max-width: 25rem;
 }
 
-.infoIcon,.closeButton:hover{
+.creditLinks{
+  text-decoration: none; 
+  color: var(--button-text-dark);
+}
+
+.closeButton{
+  color: red;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.clipboardIcon,.infoIcon,.closeButton:hover{
   cursor: pointer;
 }
 
@@ -156,6 +176,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 } 
+
 /*Non-Colour Specific Classes */
 .footer{
     text-align: center;
@@ -180,10 +201,6 @@ input:checked + .slider:before {
     font-family: Oxygen;
     max-width: 550px;
     background-color:#ffc0ad;
-}
-
-.infoIcon{
-  margin-left: 1rem;
 }
 
 /*Dark Mode Classes*/

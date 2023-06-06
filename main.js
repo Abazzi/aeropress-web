@@ -5,6 +5,7 @@ const toggle = document.querySelector("#toggleTheme");
 const infoIcon = document.querySelector('.infoIcon');
 const infoDialog = document.querySelector('.infoDialog');
 const closeButton = document.querySelector('.closeButton');
+const clipboardIcon = document.querySelector('.clipboardIcon');
 // Dice Sides
 const temperatureOptions = ["75 C","80 C","85 C","90 C","95 C","Your Choice"];
 const steepTimeGrindOptions = ["Coarse - 4 Minutes","Medium - 120 Seconds","Medium Fine - 90s","Fine - 60s","Very Fine - 60s","Your Choice"];
@@ -107,12 +108,25 @@ toggle.addEventListener('change' , () => {
     toggleTheme();
 })
 
-infoIcon.addEventListener('click', () =>{
+infoIcon.addEventListener('click', () => {
     infoDialog.showModal();
 })
 
-closeButton.addEventListener('click', () =>{
+closeButton.addEventListener('click', () => {
     infoDialog.close();
+})
+
+clipboardIcon.addEventListener('click', () => {
+    let steps = document.querySelectorAll('.step');
+    let allSteps = [];
+
+    steps.forEach((step) => {
+        // Copy the text inside the text field
+        allSteps.push(step.textContent);
+    })
+
+    navigator.clipboard.writeText(allSteps);
+
 })
 
 // Basic function for the button that calls both clearRecipe() and displayRecipe()
