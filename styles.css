@@ -194,6 +194,24 @@ input:checked + .slider:before {
     max-width: 550px;
 }
 
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1rem;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 2rem;
+}
+
+.toast-show {
+  visibility: visible;
+}
+
 /*Light Mode Classes*/
 
 .a-light{
@@ -230,7 +248,17 @@ input:checked + .slider:before {
   color: #271c19;
 }
 
+.toast-light{
+  background-color: #271c19;
+  color: var(--cream);
+}
+
 /*Dark Mode Classes*/
+
+.toast-dark{
+  background-color: var(--cream);
+  color: #271c19;
+}
 
 .a-dark{
   color: var(--cream);

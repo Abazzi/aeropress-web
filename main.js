@@ -13,7 +13,7 @@ const waterToCoffeeOptions = ["12g of Coffee to 200g of Water","15g of Coffee to
 const stirringOptions = ["Stir Once Before Pressing","Stir Twice Before Pressing","Stir Once Clockwise, and Once Counter-Clockwise Before Pressing","Stir North, South, East, West Before Pressing","Don't Stir","Your Choice"];
 const positionBloomOptions = ["Upright, 30s Bloom, 30g of Water","Upright, no Bloom","Inverted, 30s Bloom, 30g of Water","Inverted, no Bloom","Upright, 30s Bloom, 60g of Water","Inverted, 30s Bloom, 60g of Water"];
 // Everything else
-const classes = ['body','header','recipeDiv','recipe','footer','a'];
+const classes = ['body','header','recipeDiv','recipe','footer','a','toast'];
 let die;
 let stepNodes;
 
@@ -87,6 +87,14 @@ function clearRecipe(parent){
     }
 }
 
+function showToast() {
+    let toast = document.querySelector('.toast');
+    toast.classList.add('toast-show');
+    setTimeout(function(){
+        toast.classList.remove('toast-show')
+    },3000);
+}
+
 
 function toggleTheme(){
     stepNodes = document.querySelectorAll('.step');
@@ -138,6 +146,7 @@ clipboardIcon.addEventListener('click', () => {
     navigator.clipboard.writeText(stepTextArea.value);
 
     stepTextArea.remove();
+    showToast();
 })
 
 // Basic function for the button that calls both clearRecipe() and displayRecipe()
