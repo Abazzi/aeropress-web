@@ -1,6 +1,6 @@
 // HTML Connections
 const recipeDiv = document.querySelector('.recipeDiv');
-const classes = ['body','header','recipe','footer', 'recipeDiv'];
+const recipe = document.querySelector('.recipe');
 const toggle = document.querySelector("#toggleTheme");
 const infoIcon = document.querySelector('.infoIcon');
 const infoDialog = document.querySelector('.infoDialog');
@@ -12,6 +12,7 @@ const steepTimeGrindOptions = ["Coarse - 4 Minutes","Medium - 120 Seconds","Medi
 const waterToCoffeeOptions = ["12g of Coffee to 200g of Water","15g of Coffee to 200g of Water","15g of Coffee to 250g of Water","24g of Coffee to 200g of Water (Dilute to Share)","30g of Coffee to 200g of Water (Dilute to Share)","Your Choice"];
 const stirringOptions = ["Stir Once Before Pressing","Stir Twice Before Pressing","Stir Once Clockwise, and Once Counter-Clockwise Before Pressing","Stir North, South, East, West Before Pressing","Don't Stir","Your Choice"];
 const positionBloomOptions = ["Upright, 30s Bloom, 30g of Water","Upright, no Bloom","Inverted, 30s Bloom, 30g of Water","Inverted, no Bloom","Upright, 30s Bloom, 60g of Water","Inverted, 30s Bloom, 60g of Water"];
+const classes = ['body','header','recipeDiv','recipe','footer'];
 let die;
 let stepNodes;
 
@@ -60,7 +61,7 @@ function displayRecipe() {
     let recipe = generateRecipe();
 
     for(const step in recipe){
-        let ol = document.querySelector('#recipe');
+        let ol = document.querySelector('.recipe');
         let li = document.createElement('li');
         let br = document.createElement('br');
         let recipeStep;
@@ -68,7 +69,7 @@ function displayRecipe() {
         recipeStepText = `${recipe[step]}`;
 
         // assigns class depending if the toggle switch is on or off
-        toggle.checked ? li.setAttribute('class','step-dark') : li.setAttribute('class','step');
+        toggle.checked ? li.setAttribute('class','step step-dark') : li.setAttribute('class',' step step-light');
         recipeStep = document.createTextNode(recipeStepText);
         li.appendChild(recipeStep);
         ol.appendChild(li);
@@ -88,7 +89,7 @@ function clearRecipe(parent){
 
 function toggleTheme(){
     stepNodes = document.querySelectorAll('.step');
-    for(i = 0; i <= classes.length; i++){
+    for(i = 0; i < classes.length; i++){
         if(document.querySelector(`${classes[i]}`).classList.contains(`${classes[i]}-dark`)){
             document.querySelector(`.${classes[i]}`).classList.remove(`${classes[i]}-dark`);
             stepNodes.forEach((step) => step.classList.remove('step-dark'));
@@ -130,6 +131,7 @@ clipboardIcon.addEventListener('click', () => {
         allSteps.push(step.textContent);
     })
 
+    // Join Array elements with line breaks after each line
     stepTextArea.value = allSteps.join('\n');
 
     navigator.clipboard.writeText(stepTextArea.value);
