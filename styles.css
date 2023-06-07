@@ -17,7 +17,6 @@
 
 /* Direct Element Properties  */
 body{
-  background-color:var(--cream);
   font-family: 'Oxygen', sans-serif;
 }
 header{
@@ -66,7 +65,6 @@ span{
 }
 
 footer{
-  color: #271c19;
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -197,6 +195,11 @@ input:checked + .slider:before {
 }
 
 /*Light Mode Classes*/
+
+.a-light{
+  color: #271c19;
+}
+
 .step-light{
   color: #fff3ec;
 }
@@ -229,6 +232,9 @@ input:checked + .slider:before {
 
 /*Dark Mode Classes*/
 
+.a-dark{
+  color: var(--cream);
+}
 .step-dark{
     color: var(--paragraph-dark);
 }

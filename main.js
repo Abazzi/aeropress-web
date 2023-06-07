@@ -12,7 +12,8 @@ const steepTimeGrindOptions = ["Coarse - 4 Minutes","Medium - 120 Seconds","Medi
 const waterToCoffeeOptions = ["12g of Coffee to 200g of Water","15g of Coffee to 200g of Water","15g of Coffee to 250g of Water","24g of Coffee to 200g of Water (Dilute to Share)","30g of Coffee to 200g of Water (Dilute to Share)","Your Choice"];
 const stirringOptions = ["Stir Once Before Pressing","Stir Twice Before Pressing","Stir Once Clockwise, and Once Counter-Clockwise Before Pressing","Stir North, South, East, West Before Pressing","Don't Stir","Your Choice"];
 const positionBloomOptions = ["Upright, 30s Bloom, 30g of Water","Upright, no Bloom","Inverted, 30s Bloom, 30g of Water","Inverted, no Bloom","Upright, 30s Bloom, 60g of Water","Inverted, 30s Bloom, 60g of Water"];
-const classes = ['body','header','recipeDiv','recipe','footer'];
+// Everything else
+const classes = ['body','header','recipeDiv','recipe','footer','a'];
 let die;
 let stepNodes;
 
@@ -69,7 +70,7 @@ function displayRecipe() {
         recipeStepText = `${recipe[step]}`;
 
         // assigns class depending if the toggle switch is on or off
-        toggle.checked ? li.setAttribute('class','step step-dark') : li.setAttribute('class',' step step-light');
+        toggle.checked ? li.setAttribute('class','step step-dark') : li.setAttribute('class','step step-light');
         recipeStep = document.createTextNode(recipeStepText);
         li.appendChild(recipeStep);
         ol.appendChild(li);
@@ -90,16 +91,16 @@ function clearRecipe(parent){
 function toggleTheme(){
     stepNodes = document.querySelectorAll('.step');
     for(i = 0; i < classes.length; i++){
-        if(document.querySelector(`${classes[i]}`).classList.contains(`${classes[i]}-dark`)){
-            document.querySelector(`.${classes[i]}`).classList.remove(`${classes[i]}-dark`);
-            stepNodes.forEach((step) => step.classList.remove('step-dark'));
-            document.querySelector(`.${classes[i]}`).classList.add(`${classes[i]}-light`);
-            stepNodes.forEach((step) => step.classList.add('step-light'));
-        }else{
+        if(document.querySelector(`.${classes[i]}`).classList.contains(`${classes[i]}-light`)){
             document.querySelector(`.${classes[i]}`).classList.remove(`${classes[i]}-light`);
             stepNodes.forEach((step) => step.classList.remove('step-light'));
             document.querySelector(`.${classes[i]}`).classList.add(`${classes[i]}-dark`);
             stepNodes.forEach((step) => step.classList.add('step-dark'));
+        }else{
+            document.querySelector(`.${classes[i]}`).classList.remove(`${classes[i]}-dark`);
+            stepNodes.forEach((step) => step.classList.remove('step-dark'));
+            document.querySelector(`.${classes[i]}`).classList.add(`${classes[i]}-light`);
+            stepNodes.forEach((step) => step.classList.add('step-light'));
         }
     }
 }
