@@ -9,6 +9,7 @@
     --card-paragraph-dark:#fff3ec;
     --card-headline-dark: #fffffe;
     --card-highlight: #9656a1;
+    --cream: #ffc0ad;
 }
 
 /* External Font */
@@ -16,7 +17,7 @@
 
 /* Direct Element Properties  */
 body{
-  background-color: #55423d;
+  background-color:var(--cream);
   font-family: 'Oxygen', sans-serif;
 }
 header{
@@ -25,7 +26,7 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fffffe;
+  color: var(--button-text-dark);
   font-family: 'Oxygen', sans-serif;
   margin: 1rem;
 }
@@ -34,18 +35,17 @@ ol {
   text-align: center;
   margin: auto;
   padding-right: 40px;
-  color: #271c19;
   font-family: 'Oxygen', sans-serif;
 }
 
 a{
-  color: #fff3ec;
+  color: var(--button-text-dark);
   text-decoration: none; 
   font-family: 'Oxygen', sans-serif;
 }
 
 p{
-  color: #fff3ec;
+  color: var(--button-text-dark);
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -56,7 +56,7 @@ a:hover{
 li{
   list-style-type: none;
   text-align: center;
-  color: #271c19;
+  color: var(--card-headline-dark);
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -66,7 +66,7 @@ span{
 }
 
 footer{
-  color: #fff3ec;
+  color: #271c19;
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -178,6 +178,7 @@ input:checked + .slider:before {
 } 
 
 /*Non-Colour Specific Classes */
+
 .footer{
     text-align: center;
     font-family: 'Oxygen', sans-serif;
@@ -191,24 +192,56 @@ input:checked + .slider:before {
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: x-large;
-    box-shadow: 3px 10px #9656a1;
     font-family: Oxygen;
     max-width: 550px;
-    background-color:#ffc0ad;
+}
+
+/*Light Mode Classes*/
+.step-light{
+  color: #fff3ec;
+}
+
+.recipe-light{
+  color: #fff3ec;
+  background-color: var(--card-highlight);
+}
+
+.recipeDiv-light{
+  background-color: #9656a1;
+  box-shadow: 3px 10px var(--card-background-dark);
+}
+
+.body-light{
+  background-color: var(--cream);
+}
+
+.header-light{
+  color: #271c19;
+}
+
+.li-light{
+  color: #fff3ec;
+}
+
+.footer-light{
+  color: #271c19;
 }
 
 /*Dark Mode Classes*/
-.subtitle-dark{
-    color: var(--paragraph-dark);
-}
 
 .step-dark{
     color: var(--paragraph-dark);
 }
 
-.recipeDiv-dark{
+.recipe-dark{
     background-color: var(--card-background-dark);
     color: var(--card-paragraph-dark);
+}
+
+.recipeDiv-dark{
+    background-color: var(--card-background-dark);
+    box-shadow: 3px 10px var(--card-highlight);
+    color: #fff3ec;
 }
 
 .body-dark{
@@ -216,15 +249,15 @@ input:checked + .slider:before {
 }
 
 .header-dark{
-    color: var(--headline-dark);
+    color: var(--cream);
 }
 
 .ol-dark{
-    color: var(--card-paragraph-dark);
+    color: var(--cream);
 }
 
 .footer-dark{
-    color: var(--paragraph-dark);
+    color: var(--cream);
 }
 
 /* Media Queries*/

@@ -1,6 +1,6 @@
 // HTML Connections
 const recipeDiv = document.querySelector('.recipeDiv');
-const classes = ['body','header','recipeDiv','footer'];
+const classes = ['body','header','recipe','footer', 'recipeDiv'];
 const toggle = document.querySelector("#toggleTheme");
 const infoIcon = document.querySelector('.infoIcon');
 const infoDialog = document.querySelector('.infoDialog');
@@ -88,11 +88,15 @@ function clearRecipe(parent){
 
 function toggleTheme(){
     stepNodes = document.querySelectorAll('.step');
-    for(i = 0; i < classes.length; i++){
+    for(i = 0; i <= classes.length; i++){
         if(document.querySelector(`${classes[i]}`).classList.contains(`${classes[i]}-dark`)){
             document.querySelector(`.${classes[i]}`).classList.remove(`${classes[i]}-dark`);
             stepNodes.forEach((step) => step.classList.remove('step-dark'));
+            document.querySelector(`.${classes[i]}`).classList.add(`${classes[i]}-light`);
+            stepNodes.forEach((step) => step.classList.add('step-light'));
         }else{
+            document.querySelector(`.${classes[i]}`).classList.remove(`${classes[i]}-light`);
+            stepNodes.forEach((step) => step.classList.remove('step-light'));
             document.querySelector(`.${classes[i]}`).classList.add(`${classes[i]}-dark`);
             stepNodes.forEach((step) => step.classList.add('step-dark'));
         }
