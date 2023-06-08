@@ -95,7 +95,7 @@ footer{
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 75px;
   height: 34px;
 }
 
@@ -112,7 +112,7 @@ footer{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--background-dark);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -130,7 +130,7 @@ footer{
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--cream);
 }
 
 input:focus + .slider {
@@ -153,7 +153,8 @@ input:checked + .slider:before {
 }
 
 input:checked + .slider {
-  background-color: var(--background-light);
+  background-color: var(--cream);
+  color: var(--background-dark);
 }
 
 input:focus + .slider {
