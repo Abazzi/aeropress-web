@@ -1,4 +1,4 @@
-// HTML Connections
+// DOM Connections
 const recipeDiv = document.querySelector('.recipeDiv');
 const recipe = document.querySelector('.recipe');
 const toggle = document.querySelector("#toggleTheme");
@@ -6,19 +6,22 @@ const infoIcon = document.querySelector('.infoIcon');
 const infoDialog = document.querySelector('.infoDialog');
 const closeButton = document.querySelector('.closeButton');
 const clipboardIcon = document.querySelector('.clipboardIcon');
-// Dice Sides
+// Dice Side Values
 const temperatureOptions = ["75 C","80 C","85 C","90 C","95 C","Your Choice"];
 const steepTimeGrindOptions = ["Coarse - 4 Minutes","Medium - 120 Seconds","Medium Fine - 90s","Fine - 60s","Very Fine - 60s","Your Choice"];
 const waterToCoffeeOptions = ["12g of Coffee to 200g of Water","15g of Coffee to 200g of Water","15g of Coffee to 250g of Water","24g of Coffee to 200g of Water (Dilute to Share)","30g of Coffee to 200g of Water (Dilute to Share)","Your Choice"];
 const stirringOptions = ["Stir Once Before Pressing","Stir Twice Before Pressing","Stir Once Clockwise, and Once Counter-Clockwise Before Pressing","Stir North, South, East, West Before Pressing","Don't Stir","Your Choice"];
 const positionBloomOptions = ["Upright, 30s Bloom, 30g of Water","Upright, no Bloom","Inverted, 30s Bloom, 30g of Water","Inverted, no Bloom","Upright, 30s Bloom, 60g of Water","Inverted, 30s Bloom, 60g of Water"];
-// Everything else
+// classes used to change the css properties in the toggleTheme function
 const classes = ['body','header','recipeDiv','recipe','footer','a','toast'];
+// die holds the number values
 let die;
+// stepNodes will hold all of the steps for when we need to change their themes in toggleTheme()
 let stepNodes;
 
 /**
- * function diceRolls 
+ * dice()
+ * mimics rolling 6 dice, and stores each dice side value into an array, functions returns an array of 6 numbers
  */
 function dice() {
     let rolls = [];
@@ -56,6 +59,8 @@ function generateRecipe(){
 
 /**
  * displayRecipe()
+ * uses the generateRecipe() function and uses that object to display the steps in list items,
+ *  appending each list item to a ordered list
  */
 function displayRecipe() {
 
@@ -87,6 +92,9 @@ function clearRecipe(parent){
     }
 }
 
+/**
+ * Shows the "Copied!" toast when the clipboard icon is clicked
+ */
 function showToast() {
     let toast = document.querySelector('.toast');
     toast.classList.add('toast-show');
@@ -95,7 +103,9 @@ function showToast() {
     },3000);
 }
 
-
+/**
+ * Attached to toggle in footer, removes and adds light or dark mode classes to html element
+ */
 function toggleTheme(){
     stepNodes = document.querySelectorAll('.step');
     for(i = 0; i < classes.length; i++){
