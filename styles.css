@@ -91,11 +91,11 @@ footer{
   cursor: pointer;
 }
 
- /* The switch - the box around the slider */
+ /* The switch - the box around the slider (TAKEN FROM W3SCHOOLS) */
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 75px;
   height: 34px;
 }
 
@@ -112,7 +112,7 @@ footer{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--background-dark);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -130,7 +130,7 @@ footer{
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--cream);
 }
 
 input:focus + .slider {
@@ -143,7 +143,6 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
@@ -153,7 +152,8 @@ input:checked + .slider:before {
 }
 
 input:checked + .slider {
-  background-color: var(--background-light);
+  background-color: var(--cream);
+  color: var(--background-dark);
 }
 
 input:focus + .slider {
@@ -166,7 +166,6 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
@@ -174,6 +173,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 } 
+
 
 /*Non-Colour Specific Classes */
 
@@ -195,17 +195,18 @@ input:checked + .slider:before {
 }
 
 .toast {
+  font-family: 'Oxygen',sans-serif;
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
   text-align: center;
   border-radius: 5px;
+  max-width: 33%;
   padding: 1rem;
   position: fixed;
   z-index: 1;
-  left: 50%;
+  left: 33%;
+  right: 33%;
   bottom: 30px;
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 .toast-show {
@@ -304,5 +305,10 @@ input:checked + .slider:before {
 
     li{
         font-size:large;
+    }
+
+    .toast{
+      font-size: 1.25rem;
+      max-width: 100px;
     }
 }
