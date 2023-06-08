@@ -196,17 +196,18 @@ input:checked + .slider:before {
 }
 
 .toast {
+  font-family: 'Oxygen',sans-serif;
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
   text-align: center;
   border-radius: 5px;
+  max-width: 33%;
   padding: 1rem;
   position: fixed;
   z-index: 1;
-  left: 50%;
+  left: 33%;
+  right: 33%;
   bottom: 30px;
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 .toast-show {
@@ -305,5 +306,10 @@ input:checked + .slider:before {
 
     li{
         font-size:large;
+    }
+
+    .toast{
+      font-size: 1.25rem;
+      max-width: 100px;
     }
 }

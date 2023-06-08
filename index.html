@@ -9,44 +9,46 @@
     <script src="main.js" defer></script>
 </head>
 <body class="body body-light">
-    <header class="header header-light">
-        Aeropress Recipe Generator
-        <span class="infoIcon">&#9432;</span>
-        <div class="tooltip">
-            <span class="clipboardIcon tooltipText">&#x2398;</span>
-        </div>
-    </header>
+    <div class="content">
+        <header class="header header-light">
+            Aeropress Recipe Generator
+            <span class="infoIcon">&#9432;</span>
+            <div class="tooltip">
+                <span class="clipboardIcon tooltipText">&#x2398;</span>
+            </div>
+        </header>
 
-    <div class="recipeDiv recipeDiv-light">
-        <ol class="recipe recipe-light">
-            <li class="step step-light">Click me to generate a recipe!</li>
-        </ol>
-    </div>
-
-    <dialog class="infoDialog">
-        <span class="closeButton">&#120;</span> 
-        <div id="copyingInstructionsDiv">
-            <h3>How to Copy a Recipe</h3>
-            Click(or tap) and hold on the recipe until a window saying "Copied!" appears
-        </div>
-        <div class="creditsDiv">
-            <h3>Credits</h3>
-            <ol>
-                <li><a href="https://www.jameshoffmann.co.uk/" target="_blank" class="creditLinks">James Hoffmann</a></li>
-                <li><a href="https://www.happyhues.co" target="_blank" class="creditLinks">HappyHues</a></li>
-                <li><a href="https://aeropress.com/" target="_blank" class="creditLinks">Aeropress</a></li>
-                <li><a href="https://worldaeropresschampionship.com/" target="_blank" class="creditLinks">World Aeropress Championships</a></li>
-                <li><a href="https://fonts.google.com/specimen/Oxygen" target="_blank" class="creditLinks">Oxygen Font by Vernon Adams</a></li>
+        <div class="recipeDiv recipeDiv-light">
+            <ol class="recipe recipe-light">
+                <li class="step step-light">Click me to generate a recipe!</li>
             </ol>
         </div>
-    </dialog>
-    <div class="toast toast-light">Copied!</div>
+
+        <dialog class="infoDialog">
+            <span class="closeButton">&#120;</span> 
+            <div id="copyingInstructionsDiv">
+                <h3>How to Copy a Recipe</h3>
+                Click(or tap) and hold on the recipe until a window saying "Copied!" appears
+            </div>
+            <div class="creditsDiv">
+                <h3>Credits</h3>
+                <ol>
+                    <li><a href="https://www.jameshoffmann.co.uk/" target="_blank" class="creditLinks">James Hoffmann</a></li>
+                    <li><a href="https://www.happyhues.co" target="_blank" class="creditLinks">HappyHues</a></li>
+                    <li><a href="https://aeropress.com/" target="_blank" class="creditLinks">Aeropress</a></li>
+                    <li><a href="https://worldaeropresschampionship.com/" target="_blank" class="creditLinks">World Aeropress Championships</a></li>
+                    <li><a href="https://fonts.google.com/specimen/Oxygen" target="_blank" class="creditLinks">Oxygen Font by Vernon Adams</a></li>
+                </ol>
+            </div>
+        </dialog>
+        <div class="toast toast-light">Copied!</div>
+        <footer class="footer footer-light">
+            Website made by <a class="a a-light" href="https://www.adambazzi.co">Adam Bazzi</a> &bull; Theme Toggle :
+            <label class="switch">
+                <input type="checkbox" id="toggleTheme">
+                <span class="slider round"></span>
+            </label>
+        </footer>
+    </div>
 </body>
-<footer class="footer footer-light">
-    Website made by <a class="a a-light" href="https://www.adambazzi.co">Adam Bazzi</a> &bull; Theme Toggle :
-    <label class="switch">
-        <input type="checkbox" id="toggleTheme">
-        <span class="slider round"></span>
-    </label>
-</footer>
 </html>
