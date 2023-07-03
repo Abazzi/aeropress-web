@@ -1,15 +1,11 @@
 /* Declared Colour Variables*/
 :root{
-    --background-dark: #271c19;
-    --headline-dark: #fffffe;
-    --sub-headline-dark:#fff3ec;
-    --paragraph-dark: #fff3ec;
-    --button-text-dark: #271c19;
-    --card-background-dark:#55423d;
-    --card-paragraph-dark:#fff3ec;
-    --card-headline-dark: #fffffe;
-    --card-highlight: #9656a1;
     --cream: #ffc0ad;
+    --dark-brown: #271c19;
+    --white: #fffffe;
+    --coffee-brown: #55423d;
+    --off-white: #fff3ec;
+    --purple: #9656a1;
 }
 
 /* External Font */
@@ -25,7 +21,7 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--button-text-dark);
+  color: var(--dark-brown);
   font-family: 'Oxygen', sans-serif;
   margin: 1rem;
 }
@@ -38,13 +34,13 @@ ol {
 }
 
 a{
-  color: var(--button-text-dark);
+  color: var(--dark-brown);
   text-decoration: none; 
   font-family: 'Oxygen', sans-serif;
 }
 
 p{
-  color: var(--button-text-dark);
+  color: var(--dark-brown);
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -55,7 +51,7 @@ a:hover{
 li{
   list-style-type: none;
   text-align: center;
-  color: var(--card-headline-dark);
+  color: var(--white);
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -77,7 +73,7 @@ footer{
 
 .creditLinks{
   text-decoration: none; 
-  color: var(--button-text-dark);
+  color: var(--dark-brown);
 }
 
 .closeButton{
@@ -112,7 +108,7 @@ footer{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background-dark);
+  background-color: var(--dark-brown);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -124,7 +120,7 @@ footer{
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--white);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -153,11 +149,11 @@ input:checked + .slider:before {
 
 input:checked + .slider {
   background-color: var(--cream);
-  color: var(--background-dark);
+  color: var(--dark-brown);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px var(--background-light);
+  box-shadow: 0 0 1px var(--off-white);
 }
 
 input:checked + .slider:before {
@@ -225,12 +221,12 @@ input:checked + .slider:before {
 
 .recipe-light{
   color: #fff3ec;
-  background-color: var(--card-highlight);
+  background-color: var(--purple);
 }
 
 .recipeDiv-light{
   background-color: #9656a1;
-  box-shadow: 3px 10px var(--card-background-dark);
+  box-shadow: 3px 10px var(--coffee-brown);
 }
 
 .body-light{
@@ -238,19 +234,19 @@ input:checked + .slider:before {
 }
 
 .header-light{
-  color: #271c19;
+  color: var(--dark-brown);
 }
 
 .li-light{
-  color: #fff3ec;
+  color: var(--white);
 }
 
 .footer-light{
-  color: #271c19;
+  color: var(--dark-brown);
 }
 
 .toast-light{
-  background-color: #271c19;
+  background-color: var(--dark-brown);
   color: var(--cream);
 }
 
@@ -258,29 +254,29 @@ input:checked + .slider:before {
 
 .toast-dark{
   background-color: var(--cream);
-  color: #271c19;
+  color: var(--dark-brown);
 }
 
 .a-dark{
   color: var(--cream);
 }
 .step-dark{
-    color: var(--paragraph-dark);
+    color: var(--off-white);
 }
 
 .recipe-dark{
-    background-color: var(--card-background-dark);
-    color: var(--card-paragraph-dark);
+    background-color: var(--coffee-brown);
+    color: var(--off-white);
 }
 
 .recipeDiv-dark{
-    background-color: var(--card-background-dark);
-    box-shadow: 3px 10px var(--card-highlight);
-    color: #fff3ec;
+    background-color: var(--coffee-brown);
+    box-shadow: 3px 10px var(--purple);
+    color: var(--off-white);
 }
 
 .body-dark{
-    background-color: var(--background-dark);
+    background-color: var(--dark-brown);
 }
 
 .header-dark{
